@@ -14,5 +14,10 @@
     int count;
     WaterflowView *flowView;
 }
+@property (retain,nonatomic) NSMutableArray* queryArray;
+@property (retain,nonatomic) NSMutableArray* feedsArray;
+
+- (CGFloat)flowView:(WaterflowView *)flowView heightForCellAtIndex:(NSInteger)index;
+
 
 @end

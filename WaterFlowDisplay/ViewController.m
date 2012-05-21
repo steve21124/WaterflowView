@@ -8,8 +8,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ViewController.h"
 #import "AsyncImageView.h"
-
+#import <Parse/Parse.h>
+#import "FeedObject.h"
 #define NUMBER_OF_COLUMNS 3
+#define MAX_LINES 20
 
 @interface ViewController ()
 @property (nonatomic,retain) NSMutableArray *imageUrls;
@@ -19,6 +21,8 @@
 @implementation ViewController
 @synthesize imageUrls=_imageUrls;
 @synthesize currentPage=_currentPage;
+@synthesize queryArray;
+@synthesize feedsArray;
 
 - (void)viewDidLoad
 {
@@ -33,6 +37,31 @@
     
     self.imageUrls = [NSMutableArray array];
     self.imageUrls = [NSArray arrayWithObjects:@"http://img.topit.me/l/201008/11/12815218412635.jpg",@"http://photo.l99.com/bigger/22/1284013907276_zb834a.jpg",@"http://www.webdesign.org/img_articles/7072/BW-kitten.jpg",@"http://www.raiseakitten.com/wp-content/uploads/2012/03/kitten.jpg",@"http://imagecache6.allposters.com/LRG/21/2144/C8BCD00Z.jpg",nil];
+    
+    
+    //using parse query here
+    PFQuery* query = [PFQuery queryWithClassName:@"Route"];
+    [query orderByDescending:@"createdAt"];
+    [query setLimit:MAX_LINES];
+    [queryArray addObject:query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray* fetched,NSError* error){
+        [queryArray removeObject:query];
+        [feedsArray removeAllObjects];
+        for (PFObject*obj in fetched){
+            FeedObject* feedObject = [[FeedObject alloc]init];
+            feedObject.pfobj = obj;
+            [feedsArray addObject:feedObject];
+            [feedObject release];
+        }
+        if ([fetched count]<MAX_LINES) {
+          //  shouldDisplayNextForFeeds = 0; 
+        }else{
+          //  shouldDisplayNextForFeeds = 1;  
+        }
+       // [feedsTable reloadData];
+    }];    
+    
+    
 }
 
 - (void)dealloc
@@ -67,7 +96,7 @@
 
 - (NSInteger)flowView:(WaterflowView *)flowView numberOfRowsInColumn:(NSInteger)column
 {
-    return 6;
+    return 8;
 }
 
 - (WaterFlowCell *)flowView:(WaterflowView *)flowView_ cellForRowAtIndex:(NSInteger)index

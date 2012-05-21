@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		802233B21569C5B7002B8169 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802233B11569C5B7002B8169 /* Parse.framework */; };
+		802233B41569C615002B8169 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802233B31569C615002B8169 /* AudioToolbox.framework */; };
+		802233B61569C631002B8169 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 802233B51569C631002B8169 /* Security.framework */; };
+		802233C81569CA0A002B8169 /* FeedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 802233C71569CA0A002B8169 /* FeedObject.m */; };
 		806B44DF152401EC00E59412 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806B44DE152401EC00E59412 /* UIKit.framework */; };
 		806B44E1152401EC00E59412 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806B44E0152401EC00E59412 /* Foundation.framework */; };
 		806B44E3152401EC00E59412 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806B44E2152401EC00E59412 /* CoreGraphics.framework */; };
@@ -40,6 +44,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		802233B11569C5B7002B8169 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		802233B31569C615002B8169 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		802233B51569C631002B8169 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		802233C61569CA0A002B8169 /* FeedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedObject.h; sourceTree = "<group>"; };
+		802233C71569CA0A002B8169 /* FeedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedObject.m; sourceTree = "<group>"; };
 		806B44DA152401EC00E59412 /* WaterFlowDisplay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterFlowDisplay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		806B44DE152401EC00E59412 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		806B44E0152401EC00E59412 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -104,6 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				802233B61569C631002B8169 /* Security.framework in Frameworks */,
+				802233B41569C615002B8169 /* AudioToolbox.framework in Frameworks */,
 				80DE39B915256390002EFAE3 /* libxml2.2.7.3.dylib in Frameworks */,
 				80DE39B71525638A002EFAE3 /* libz.1.2.5.dylib in Frameworks */,
 				80DE39B51525637E002EFAE3 /* MobileCoreServices.framework in Frameworks */,
@@ -113,6 +124,7 @@
 				806B44DF152401EC00E59412 /* UIKit.framework in Frameworks */,
 				806B44E1152401EC00E59412 /* Foundation.framework in Frameworks */,
 				806B44E3152401EC00E59412 /* CoreGraphics.framework in Frameworks */,
+				802233B21569C5B7002B8169 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +134,8 @@
 		806B44CF152401EC00E59412 = {
 			isa = PBXGroup;
 			children = (
+				802233B51569C631002B8169 /* Security.framework */,
+				802233B31569C615002B8169 /* AudioToolbox.framework */,
 				8083BC9E1532BF11008D4DF5 /* EGORefreshTableHeaderView */,
 				8083BC951532B194008D4DF5 /* LoadingMoreFooterView */,
 				80DE39841525636B002EFAE3 /* ASIHTTPRequest */,
@@ -144,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				80DE39B815256390002EFAE3 /* libxml2.2.7.3.dylib */,
+				802233B11569C5B7002B8169 /* Parse.framework */,
 				80DE39B61525638A002EFAE3 /* libz.1.2.5.dylib */,
 				80DE39B41525637E002EFAE3 /* MobileCoreServices.framework */,
 				80DE39B215256379002EFAE3 /* SystemConfiguration.framework */,
@@ -159,6 +174,8 @@
 		806B44E4152401EC00E59412 /* WaterFlowDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				802233C61569CA0A002B8169 /* FeedObject.h */,
+				802233C71569CA0A002B8169 /* FeedObject.m */,
 				806B44ED152401EC00E59412 /* AppDelegate.h */,
 				806B44EE152401EC00E59412 /* AppDelegate.m */,
 				806B44F0152401EC00E59412 /* ViewController.h */,
@@ -340,6 +357,7 @@
 				80DE39AE1525636B002EFAE3 /* FullyLoaded.m in Sources */,
 				8083BC981532B194008D4DF5 /* LoadingMoreFooterView.m in Sources */,
 				8083BCA11532BF11008D4DF5 /* EGORefreshTableHeaderView.m in Sources */,
+				802233C81569CA0A002B8169 /* FeedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,10 +429,15 @@
 		806B44F9152401EC00E59412 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaterFlowDisplay/WaterFlowDisplay-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "WaterFlowDisplay/WaterFlowDisplay-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -423,10 +446,15 @@
 		806B44FA152401EC00E59412 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaterFlowDisplay/WaterFlowDisplay-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
 				INFOPLIST_FILE = "WaterFlowDisplay/WaterFlowDisplay-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
